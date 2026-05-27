@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p {
+            color: red;
+        }
+        ul li {
+            color: rgb(193, 224, 17);
+        }
+        ul li a {
+            color: rgb(230, 137, 14);
+        }
+        div a {
+            color: green;
+        }
+        .header a {
+            color: purple;
+        }
+        .footer a {
+            color: rgb(230, 137, 14);
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 后代选择器 -->
+     <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3 <a href="#">sssss</a></li>
+        <li>列表项4</li>
+        <li>列表项5</li>
+     </ul>
+     <div>
+        <a href="#">ddddd</a>
+        <a href="#">ddddd</a>
+        <a href="#">ddddd</a>
+        <a href="#">ddddd</a>
+     </div>
+     <div class="header">
+        <a href="#">关于我们</a>
+        <a href="#">ad我们</a>
+        <a href="#">xx我们</a>
+     </div>
+    <div>
+        111<p>我是红色</p>
+    </div>
+    <p>我是无色</p>
+    <!-- 子代选择器 -->
+    <div class="footer">
+        <p>我是红色</p>
+        <a href="#">子代选择器</a>
+        <p>我是红色a标签
+            <a href="#">孙</a>
+        </p>
+    </div>
+</body>
+</html>
