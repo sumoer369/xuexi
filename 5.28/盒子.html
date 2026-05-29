@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class^="box"] {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+        .box {
+            border: 1px solid #000;
+        }
+        .box2 {
+            border: 1px dashed #000;
+        }
+        .box3 {
+            /* border-top: 5px solid #f24d06;
+            border-bottom: 1px dotted #000;
+            border-left: 1px dotted #000;
+            border-right: 1px dotted #000; */
+            border: 1px dashed #000;
+            border-top: 5px solid #f24d06;
+        }
+        .box4 {
+            background-color: pink;
+            /* border-radius: 10px; */
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+        }
+        .box5 {
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+            border-radius: 0px 100px 30px 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        边框
+    </div>
+    <div class="box2">
+        边框
+    </div>
+    <div class="box3">
+        边框
+    </div>
+    <div class="box4">
+        圆角
+    </div>
+    <div class="box5">
+        圆角
+    </div>
+
+    
+</body>
+</html>
