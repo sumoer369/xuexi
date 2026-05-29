@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div[class^="box"] {
+            height: 200px;
+            width: 200px;
+            border: 1px solid #000;
+        } */
+    
+        .box {
+            /* margin: 20px auto; */
+            margin-bottom: 20px;
+            background-color: pink;
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+            /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5); */
+        }
+        .box:hover {
+            width: 150px;
+            transition: all .3s;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+        }
+        .box1 {
+            background-color: yellow;
+            /* margin: 20px auto; */
+            margin-top: 50px;
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+        }
+        .box2 {
+            background-color: red;
+            box-sizing: border-box;
+            /* border: 1px solid #000; */
+            /* padding: 0.1px 0 0 0; */
+            /* overflow: hidden; */
+            border: 10px solid #000;
+            height: 200px;
+            width: 200px;
+        }
+        .box3 {
+            background-color: green;
+            margin-top: 20px;
+            height: 50px;
+            width: 50px;
+        }
+        body {
+            height: 1500px;
+        }
+        .box4 {
+            width: 900px;
+            height: 300px;
+            /* background: pink url(img/ldh.png) repeat-x center left/200px fixed; */
+                       /* background-image: url(img/ldh.png); */
+            /* background-color: pink; */
+            /* background-repeat: no-repeat; */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            /* background-position: center center; */
+            /* background-position: right center; */
+            /* background-position: left bottom; */
+            /* background-position: center; */
+            /* background-size: cover; */
+            /* background-size: contain; */
+            /* background-size: 100px 300px; */
+            /* background-attachment: fixed; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        内边距
+    </div>
+    <div class="box1">
+        内边距
+    </div>
+    <!-- 嵌套盒子外边距塌陷 -->
+     <div class="box2">
+        <div class="box3">
+        外边距
+        </div>
+    </div>
+    <!-- 背景图片 -->
+    <div class="box4">
+        背景图片
+    </div>
+</body>
+</html>
