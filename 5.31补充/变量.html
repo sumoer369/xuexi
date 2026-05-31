@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+            color: #000;
+        }
+        table,th,td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+        }
+        table{
+            width: 35%;
+            margin: 0 auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>订单付款确认页面</h2>
+    <script>
+        /* let age
+        age = 18
+        alert(age) */
+       /*  let num = 20
+        let uname = '张三'
+        const pi = 3.14
+        // pi = 3.1415926
+        let num1 = 100
+        let num2 = 200
+        console.log(num1,num2)
+        // console.log(num2)
+        let temp
+        temp = num1
+        num1 = num2
+        num2 = temp
+        console.log(num1,num2) */
+        // console.log(num2)
+        /* console.log(pi*10)
+        console.log(num)
+        console.log(uname) */
+       /*  let userName = prompt('请输入姓名')
+        let age = prompt('请输入年龄')
+        let gender = prompt('请输入性别')
+        document.write('姓名：'+userName+'，年龄：'+age+'，性别：'+gender+'') */
+        /* let age = [18,19,20,21,22]
+        document.write(age+','+age.length) */
+        /* let radius = prompt('请输入圆的半径')
+        const PI = 3.14
+        let rr = radius*radius*PI
+        console.log('圆的面积为：'+rr)
+        // console.log('圆的周长为：'-2)
+        // console.log(NAN+1)
+        document.write(`圆的周长为：${rr}`+typeof rr) */
+        /* console.log('我'+1)
+        console.log('2'+2)
+        console.log('2'-2)
+        console.log('2'*2)
+        console.log('2'/2)
+        console.log('2'%2)
+        // '+'可以转换成数字
+        console.log(+'123') */
+        /* let num1 = +prompt('请输入一个数字')
+        let num2 = +prompt('请输入另一个数字')
+        document.write(num1+num2) */
+        let price = +prompt('请输入单价')
+        let num = +prompt('请输入数量')
+        let address = prompt('请输入收货地址')
+        let totalPrice = price*num
+        
+        document.write(`
+            <table>
+            <tr>
+                <th>商品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>总价</th>
+                <th>收货地址</th>
+            </tr>
+            <tr>
+                <td>小米手机青春plus</td>
+                <td>${price}</td>
+                <td>${num}</td>
+                <td>${totalPrice}</td>
+                <td>${address}</td>
+            </tr>
+        </table>
+        `)
+
+    </script>
+    
+</body>
+</html>
