@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let shuzu=[6,4,5,3,9]
+        // for(let i=0;i<shuzu.length;i++){
+        //     for(let j=0;j<shuzu.length;j++){
+        //         if(shuzu[j]>shuzu[j+1]){
+        //             let temp = shuzu[j]
+        //             shuzu[j] = shuzu[j+1]
+        //             shuzu[j+1]=temp
+        //         }
+        //     }
+        // }
+        shuzu.sort(function(a,b) {
+            return a - b
+            // return b - a
+            
+        })
+        console.log(shuzu)
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            border: 1px solid pink;
+            width: 69px;
+            /* height: 20px; */
+            /* line-height: 20px; */
+            margin: 0 2px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+
+        function set99() {
+            for (let i = 1; i <= 9; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.write(`<span>${j}X${i}=${i * j}</span>`)
+                }
+                document.write("<br>")
+            }
+        }
+        function sum(a,b){
+            return a+b
+        }
+        document.write(sum(1,2))
+        // set99()
+        // set99()
+        // set99()
+
+    </script>
+
+</body>
+
+</html>

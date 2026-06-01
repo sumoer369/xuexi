@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            margin: 50px auto;
+            align-items: flex-end;
+            justify-content: space-around;
+            width: 700px;
+            height: 300px;
+            text-align: center;
+            border-left: 2px solid pink;
+            border-bottom: 2px solid pink;
+        }
+        .quarter{
+            display: flex;
+            width: 100px;
+            flex-direction: column;
+            background-color: pink;
+            justify-content: space-between;
+        }
+        .top{
+            margin-top: -20px;
+        }
+        h2{
+            font-size: 12px;
+            margin-bottom: -20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let shuzu=[]
+        for(let i=1;i<=4;i++){
+            shuzu.push(prompt(`请输入第${i}季度的销售额`))
+        }
+        document.write(`<div class="box">`)
+        for(let i=0;i<shuzu.length;i++){
+            document.write(`
+            <div class="quarter" style="height:${shuzu[i]}px">
+                <span class="top">${shuzu[i]}</span>
+                <h2>${i+1}季度</h2>
+            </div>
+                `)
+        }
+        document.write(`<div class="/box">`)
+    </script>
+</body>
+</html>
