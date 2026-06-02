@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fn()
+        // let fn = function(){
+        //     console.log(123)
+        // }
+        // fn()
+        // (function(){console.log('我是一个立即执行的匿名函数')})();
+        // (function(){console.log('我是一个立即执行的匿名函数2')})();
+        // (function(){
+        //     let sum = 10
+        // })();
+        // (function(){
+        //     let sum = 20
+        // })()
+        // (function(x, y){console.log(x, y)})(1, 2);
+        // (function(){}())
+        function getTime(zong=0){
+            let h = parseInt(zong/60/60%24)
+            let m = parseInt(zong/60%60)
+            let s = parseInt(zong%60)
+            h = h<10?'0'+ h : h
+            m = m<10?'0'+ m : m
+            s = s<10?'0'+ s : s
+            return `计算后的是${h}时${m}分${s}秒`
+        }
+        let miao = +prompt('请输入秒数')
+        document.write(getTime(miao))
+        // document.write(`计算后的时间是${getTime(miao)[0]}时${getTime(miao)[1]}分${getTime(miao)[2]}秒`)
+
+    </script>
+</body>
+</html>
