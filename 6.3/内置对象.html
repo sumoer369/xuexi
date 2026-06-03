@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(Math.PI)
+        // console.log(Math.ceil(2.1))
+        // console.log(Math.ceil(5.5))
+        // console.log(Math.ceil(2.9))
+        // console.log(Math.ceil(2))
+        // console.log(Math.floor(2.9))
+        // console.log(Math.floor(1.9))
+        // console.log(Math.floor(1.1))
+        // console.log(Math.round(1.1))
+        // console.log(Math.round(1.4))
+        // console.log(Math.round(1.5))
+        // console.log(Math.round(-1.1))
+        // console.log(Math.round(-1.5))
+        // console.log(Math.round(-1.51))
+        // console.log(Math.max(1,2,3,1,2,3,4,5,9))
+        // console.log(Math.min(1,2,3,1,2,3,4,5,9))
+        // console.log(Math.floor(Math.random()*(11)))
+        // let arr = ['red','blue','green']
+        // let random = Math.floor(Math.random()*(3))
+        // console.log(arr[random]);
+        function getRandom(N, M){
+            return Math.floor(Math.random()*(M - N + 1)) + N
+        }
+
+        // let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操']
+        // // console.log(getRandom(2,5))
+        // random = getRandom(0, 7)
+        // console.log(arr[random])
+        // arr.splice(random,1)
+        // console.log(arr)
+       let random = getRandom(1,10)
+        while(1){
+            let input = +prompt('请输入一个数字')
+            if(input>random){
+                alert('猜大了')
+            }else if(input<random){
+                alert('猜小了')   
+            }else if(input==random){
+                alert('猜对了')
+                break   
+            }
+            
+        }
+        
+
+    </script>
+</body>
+</html>
