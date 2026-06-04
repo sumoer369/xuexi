@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            width: 300px;
+            height: 300px;
+            background-color: #ccc;
+            padding: 50px;
+            margin: 50px auto;
+            border: 1px solid blue
+        } */
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .nan{
+             border: 2px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        const div = document.querySelector('div')
+        // div.className = 'box'
+        div.classList.add('box')
+        div.classList.add('nan')
+        div.classList.remove('box')
+        div.classList.remove('nan')
+        div.classList.toggle('box')
+        // const box = document.querySelector('.box')
+        // box.style.width = '300px'
+        // box.style.height = '300px'
+        // box.style.backgroundColor = 'red'
+        // box.style.border = '1px solid black'
+        // box.style.borderTop = '2px solid blue'
+
+    </script>
+</body>
+</html>

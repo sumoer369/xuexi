@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="1.jpg" alt="">
+    <script>
+        function getRandom(N, M){
+            return Math.floor(Math.random()*(M - N + 1)) + N
+        }
+        // const img = document.querySelector('img')
+        // img.src = '../img/2.png'
+        const img = document.querySelector('img')
+        const random = getRandom(1,5)
+        // img.src = 'img/' + random + '.jpg'
+        img.src = `img/${random}.jpg`
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 840px;
+            height: 420px;
+            background: url(./img/1.jpg) no-repeat center center;
+            padding: 100px 250px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <strong>随机抽奖</strong>
+        <h1>一等奖:<span id="first"></span></h1>
+        <h3>二等奖:<span id="second"></span></h3>
+        <h5>三等奖:<span id="third"></span></h5>
+    </div>
+    <script>
+        const personArr = ['张三','李四','王五','赵六','钱二','孙三']
+        const random = Math.floor(Math.random() * personArr.length)
+        document.querySelector('#first').innerHTML = personArr[random]
+        personArr.splice(random,1)
+        const random2 = Math.floor(Math.random() * personArr.length)
+        document.querySelector('#second').innerHTML = personArr[random2]
+        personArr.splice(random2,1)
+        const random3 = Math.floor(Math.random() * personArr.length)
+        document.querySelector('#third').innerHTML = personArr[random3]
+
+    </script>
+</body>
+</html>

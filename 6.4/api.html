@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box">2</div>
+    <p id="p1">3</p>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // const box = document.querySelector('div')
+        // const box1 = document.querySelector('.box')
+        // const p1 = document.querySelector('#p1')
+        // const li = document.querySelector('ul li:first-child')
+        // console.log(box)
+        // console.log(box1)
+        // console.log(p1)
+        // console.log(li)
+        // const lis = document.querySelectorAll('ul li')
+        // console.log(lis)
+        // lis[0].style.color = 'red'
+        
+        // const arr = ['red','green','blue']
+        // arr.push('yellow')
+        // console.log(arr)
+        const box1 = document.querySelector('.box1')
+        box1.innerText = '修改后内容'
+        box1.innerHTML = '<h1>修改后内容</h1>'
+        console.log(box1.innerText)
+    </script>
+</body>
+</html>

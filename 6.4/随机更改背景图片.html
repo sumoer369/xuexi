@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url('img/1.jpg') no-repeat top center/cover;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getRandom(N, M){
+            return Math.floor(Math.random()*(M - N + 1)) + N
+        }
+        const random = getRandom(1, 5)
+        document.body.style.backgroundImage = `url('img/${random}.jpg')`
+    </script>
+</body>
+</html>
