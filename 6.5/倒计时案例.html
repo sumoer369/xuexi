@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button disabled>我已阅读用户协议（3）</button>
+    <script>
+        let num = 3
+        const bin = document.querySelector('button')
+        let time = setInterval(function(){
+            num--
+            bin.innerHTML = `我已阅读用户协议（${num}）`
+            if(num == 0){
+                clearInterval(time)
+                bin.disabled = false
+                bin.innerHTML = `我已阅读用户协议`
+            }
+            },1000)
+
+        
+    </script>
+</body>
+</html>
