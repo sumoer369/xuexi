@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button>点击我</button> -->
+    <div>我是div</div>
+    <!-- <input type="text" value="请输入姓名"> -->
+    <script>
+        const div = document.querySelector('div')
+        div.addEventListener('keydown',function(s){
+            div.style.height = '40px'
+        })
+        // const btn = document.querySelector('button')
+        // btn.addEventListener('click',function(){
+        //     console.log('点击了按钮')
+        // })
+
+        // const btn = document.querySelector('button')
+        // btn.addEventListener('click',function(){
+        //     alert('11')
+        // })
+        // btn.addEventListener('click',function(){
+        //     alert('22')
+        // })
+        // const div = document.querySelector('div')
+        // div.addEventListener('mouseenter',function(){
+        //     div.style.backgroundColor = 'red'
+        // })
+        // div.addEventListener('mouseleave',function(){
+        //     div.style.backgroundColor = 'pink'
+        // })
+        // const input = document.querySelector('input')
+        // input.addEventListener('focus',function(){
+        //     input.style.backgroundColor = 'red'
+        // })
+        // input.addEventListener('blur',function(){
+        //     input.style.backgroundColor = 'pink'
+        // })
+        // div.addEventListener('click',function(){
+        //     div.style.backgroundColor = 'green'
+        // })
+    </script>
+</body>
+</html>
