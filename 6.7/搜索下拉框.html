@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul.search-dropdown{
+            width: 166px;
+        }
+        .search-dropdown{
+            display: none;
+        }
+        .search-dropdown li{
+            border: 1px solid #ccc;
+            width: 166px;
+            padding: 0 0 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="search" placeholder="搜索">
+        <ul class="search-dropdown">
+            <li>搜索1</li>
+            <li>搜索2</li>
+            <li>搜索3</li>
+            <li>搜索4</li>
+            <li>搜索5</li>
+        </ul>
+    </div>
+
+    <script>
+        const xlk = document.querySelector('input')
+        const li = document.querySelector('.search-dropdown')
+        xlk.addEventListener('focus',function(){
+            // console.log('有焦点触发')
+            li.style.display = 'block'
+            
+        })
+        xlk.addEventListener('blur',function(){
+            // console.log('失去焦点触发')
+            li.style.display = 'none'
+            
+        })
+    </script>
+</body>
+</html>

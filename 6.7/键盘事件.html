@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <span>已输入0/200字</span>
+    <script>
+        // const input = document.querySelector('input')
+        // // input.addEventListener('keydown',function(){
+        // //     console.log('按下了键')
+        // // })
+        // // input.addEventListener('keyup',function(){
+        // //     console.log('松开了键')
+        // // })
+        // input.addEventListener('input',function(){
+        //     console.log(input.value)
+        // })
+        const input = document.querySelector('input')
+        const span = document.querySelector('span')
+        input.addEventListener('input',function(){
+            span.innerHTML = `已输入${input.value.length}/200字`
+        })
+
+    </script>
+</body>
+</html>
