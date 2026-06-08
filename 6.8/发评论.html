@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入评论内容">
+    <button>提交</button>
+    <script>
+        const input = document.querySelector('input')
+        const btn = document.querySelector('button')
+        btn.addEventListener('click',function(){
+            if(input.value.trim() !== ''){
+               console.log(input.value)
+            }
+            else{
+                alert('不能为空')
+                input.value = ''
+            }
+        })
+        input.addEventListener('keydown',function(e){
+            if(e.key === 'Enter'){
+                btn.click()
+            }   
+        })
+    </script>
+</body>
+</html>

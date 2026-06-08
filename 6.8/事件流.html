@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .middle{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .inner{
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        外
+        <div class="middle">
+            中
+            <div class="inner">
+                里
+            </div>
+        </div>
+    </div>
+    <button>点击我</button>
+    <script>
+        // const container = document.querySelector('.container')
+        // container.addEventListener('click',function(){
+        //     console.log('外')
+        // // },true)
+        // })
+        // const middle = document.querySelector('.middle')
+        // middle.addEventListener('click',function(e){
+        //     console.log('中')
+        //     e.stopPropagation()
+        // // },true)
+        // })
+        // const inner = document.querySelector('.inner')
+        // inner.addEventListener('click',function(){
+        //     console.log('里')
+        // // },true)
+        // })
+        // const btn = document.querySelector('button')
+        // btn.onclick = function(){
+        //     console.log('点击了按钮')
+        // }
+        // btn.onclick = null
+        function fu(){
+            console.log('点击了按钮')
+        }
+        const btn = document.querySelector('button')
+        btn.addEventListener('click',fu)
+        btn.removeEventListener('click',fu)
+    </script>
+</body>
+</html>

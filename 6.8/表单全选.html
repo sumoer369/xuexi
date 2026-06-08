@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选案例</title>
+    <style>
+        /* 简单样式，可忽略 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+        .itemCheckbox:checked{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>表单全选反选</h3>
+    <div>
+        <label>
+            <input type="checkbox" id="checkAll">
+        </label>
+    </div>
+    <ul id="itemList">
+        <li><label><input type="checkbox" class="itemCheckbox"> 选项1</label></li>
+        <li><label><input type="checkbox" class="itemCheckbox"> 选项2</label></li>
+        <li><label><input type="checkbox" class="itemCheckbox"> 选项3</label></li>
+        <li><label><input type="checkbox" class="itemCheckbox"> 选项4</label></li>
+    </ul>
+
+    <script>
+        // 1 获取大复选框和小复选框元素
+        const checkAll = document.querySelector('#checkAll')
+        const itemCheckbox = document.querySelectorAll('.itemCheckbox')
+        // 2点击大复选框
+        checkAll.addEventListener('click', function () {
+            // 得到大复选框的状态
+            // console.log(checkAll.checked)
+            // let isChecked = checkAll.checked
+            // 3 小复选框与大复选框一致
+            for (i = 0; i < itemCheckbox.length; i++) {
+                itemCheckbox[i].checked = checkAll.checked
+            }
+            
+        })
+        // 小复选框控制大复选框状态
+            for (i = 0; i < itemCheckbox.length; i++) {
+                itemCheckbox[i].addEventListener('click', function () {
+                    // 判断选中的小复选框个数
+                    console.log(document.querySelectorAll('.itemCheckbox:checked').length)
+                    checkAll.checked = document.querySelectorAll('.itemCheckbox:checked').length == itemCheckbox.length
+                })
+                    // 4 小复选框全选后
+                //     if(document.querySelectorAll('.itemCheckbox:checked').length == itemCheckbox.length){
+                //         checkAll.checked = true
+                //     }else{
+                //         checkAll.checked = false
+                //     }
+                }
+                
+            
+
+    </script>
+</body>
+
+</html>

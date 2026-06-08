@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .middle{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .inner{
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        外
+        <div class="middle">
+            中
+            <div class="inner">
+                里
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector('.container')
+        // container.addEventListener('mouseover',function(){
+        container.addEventListener('mouseenter',function(){
+            console.log('鼠标经过外')
+        })
+        // container.addEventListener('mouseout',function(){
+        container.addEventListener('mouseleave',function(){
+            console.log('鼠标离开外')
+        })
+    </script>
+</body>
+</html>

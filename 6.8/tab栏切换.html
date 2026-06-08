@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab切换案例</title>
+    <style>
+        .tab-header {
+            display: flex;
+            width: 500px;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: none;
+            margin-right: 5px;
+        }
+        .tab-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        .tab-content {
+            padding: 20px;
+            width: 500px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tab-header">
+            <button class="tab-btn active" data-tab="tab1">选项卡1</button>
+            <button class="tab-btn" data-tab="tab2">选项卡2</button>
+            <button class="tab-btn" data-tab="tab3">选项卡3</button>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">内容1：这是第一个选项卡的内容。</div>
+            <div class="tab-pane" id="tab2">内容2：这是第二个选项卡的内容。</div>
+            <div class="tab-pane" id="tab3">内容3：这是第三个选项卡的内容。</div>
+        </div>
+    </div>
+
+    <script>
+        const tabBtn = document.querySelectorAll('.tab-header button')
+        const tabPane = document.querySelectorAll('.tab-content .tab-pane')
+        for(let i=0;i<tabBtn.length;i++){
+            // console.log(tabBtn[i])
+            tabBtn[i].addEventListener('mouseenter',function(){
+                // console.log('鼠标经过')
+                document.querySelector('.tab-header .active').classList.remove('active')
+                this.classList.add('active')
+                document.querySelector('.tab-content .active').classList.remove('active')
+                tabPane[i].classList.add('active')
+            })
+        }
+    </script>
+</body>
+</html>

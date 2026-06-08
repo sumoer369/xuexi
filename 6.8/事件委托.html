@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border: 1px solid #000;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <h1>事件委托</h1>
+    </ul>
+    <script>
+        const ul = document.querySelector('.container')
+        ul.addEventListener('click',function(e){
+            // console.log(e.target)
+            // console.dir(e.target)
+            if(e.target.tagName === 'LI'){
+                console.log('点击了')
+                e.target.style.color = 'red'
+            }
+        })
+    </script>
+</body>
+</html>
