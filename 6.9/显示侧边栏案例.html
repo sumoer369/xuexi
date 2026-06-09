@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小兔鲜 - 导航吸顶与返回顶部</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* 顶部栏 */
+        .top-bar {
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        /* 导航栏外层 */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        /* 吸顶时添加的类 */
+        .header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* 占位元素（吸顶时显示，防止页面跳动） */
+        .header-placeholder {
+            display: none;
+            height: 70px;          /* 和导航栏高度一致 */
+        }
+        .header-placeholder.show {
+            display: block;
+        }
+
+        .nav {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #27ba9b;
+            text-decoration: none;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-list li a {
+            padding: 0 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-list li a:hover {
+            color: #27ba9b;
+        }
+
+        .content {
+            width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            min-height: 1500px;     /* 让页面出现滚动条 */
+        }
+
+        .banner {
+            background-color: #ddd;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            border-left: 5px solid #27ba9b;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-item {
+            width: 280px;
+            background-color: #fafafa;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        /* 返回顶部按钮（基础样式） */
+        .back-to-top {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #27ba9b;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;          /* 默认隐藏，滚动后显示 */
+            z-index: 10;
+        }
+        .back-to-top.show {
+            display: block;
+        }
+
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">欢迎来到小兔鲜 | 正品保证 | 极速物流</div>
+
+<!-- 占位元素，用于吸顶时占位 -->
+<div class="header-placeholder"></div>
+
+<!-- 导航栏 -->
+<div class="header" id="header">
+    <div class="nav">
+        <div class="logo"><a href="#">小兔鲜</a></div>
+        <ul class="nav-list">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">新鲜好物</a></li>
+            <li><a href="#">人气推荐</a></li>
+            <li><a href="#">热门品牌</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="banner">Banner 轮播图区域</div>
+    <div class="section-title">新鲜好物</div>
+    <div class="product-list">
+        <div class="product-item">商品1</div>
+        <div class="product-item">商品2</div>
+        <div class="product-item">商品3</div>
+        <div class="product-item">商品4</div>
+    </div>
+    <div class="section-title">人气推荐</div>
+    <div class="product-list">
+        <div class="product-item">推荐1</div>
+        <div class="product-item">推荐2</div>
+        <div class="product-item">推荐3</div>
+        <div class="product-item">推荐4</div>
+    </div>
+    <!-- 填充更多内容让滚动条出现 -->
+    <div style="height: 500px;"></div>
+</div>
+
+<div class="back-to-top" id="backToTopBtn">↑</div>
+
+<footer>© 2026 小兔鲜 | 品质生活 新鲜直达</footer>
+
+<script>
+    
+    
+    window.addEventListener('scroll',function(){
+        const d = document.querySelector('.content').offsetTop
+        const toTop = document.querySelector('.back-to-top') 
+        if(document.documentElement.scrollTop >= d){
+            toTop.classList.add('show')
+        }else{
+            toTop.classList.remove('show')
+        }
+    })
+    const backToTopBtn = document.querySelector('#backToTopBtn')
+
+    backToTopBtn.addEventListener('click',function(){
+        document.documentElement.scrollTop = 0
+    })
+
+</script>
+</body>
+</html>
