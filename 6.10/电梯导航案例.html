@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电梯导航案例（仿pink老师课程）</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 5000px;
+            background-color: #f5f5f5;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+
+        /* 整体容器 */
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+
+        /* 左侧内容区 */
+        .content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        /* 每个模块 */
+        .module {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .module h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 5px solid #27ba9b;
+        }
+
+        .module-img {
+            height: 200px;
+            background-color: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        /* 右侧电梯导航 (粘性定位) */
+        .elevator {
+            position: fixed;
+            right: 127px;
+            display: none;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            /* 距离右侧30px */
+            top: 400px;
+            width: 120px;
+        }
+
+        .elevator ul {
+            list-style: none;
+        }
+
+        .elevator li {
+            text-align: center;
+            padding: 12px 0;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: all 0.2s;
+        }
+
+        .elevator li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .elevator li.active {
+            color: #27ba9b;
+            background-color: #e6f7f3;
+            border-left: 3px solid #27ba9b;
+        }
+        .top{
+            height: 500px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 左侧内容区域 -->
+        <div class="content">
+            <div class="top"></div>
+            <div class="module" id="module1">
+                <h2>新鲜好物</h2>
+                <div class="module-img">商品展示图</div>
+                <p>这里可以添加商品介绍、价格等信息。</p>
+            </div>
+            <div class="module" id="module2">
+                <h2>人气推荐</h2>
+                <div class="module-img">推荐内容</div>
+                <p>根据用户喜好推荐的热门商品。</p>
+            </div>
+            <div class="module" id="module3">
+                <h2>热门品牌</h2>
+                <div class="module-img">品牌展示</div>
+                <p>合作品牌介绍及优惠活动。</p>
+            </div>
+            <div class="module" id="module4">
+                <h2>关于我们</h2>
+                <div class="module-img">公司简介</div>
+                <p>公司文化、联系方式等。</p>
+            </div>
+            <!-- 可继续增加模块 -->
+        </div>
+
+        <!-- 右侧电梯导航 -->
+        <div class="elevator">
+            <ul>
+                <li class = "" data-id="module1">新鲜好物</li>
+                <li data-id="module2">人气推荐</li>
+                <li data-id="module3">热门品牌</li>
+                <li data-id="module4">关于我们</li>
+                <li class="back-top">回到顶部</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //页面滚动
+        (function(){
+        const elevator = document.querySelector('.elevator')
+        // const d = document.querySelector('#module2')
+        let top = document.querySelector('.top').offsetTop
+        window.addEventListener('scroll', function () {
+            if (document.documentElement.scrollTop >= 300) {
+                elevator.style.display = 'block'
+            } else {
+                elevator.style.display = 'none'
+            }
+        })
+        })();
+        //导航点击
+        (function(){
+            const elevator = document.querySelector('.elevator')
+            elevator.addEventListener('click', function (e) {
+                if (e.target.tagName === 'LI' && e.target.dataset.id) {
+                    const old = document.querySelector('.elevator .active')
+                    if(old)old.classList.remove('active')
+                    e.target.classList.add('active')
+                    console.log(e.target.dataset.id)
+                    const dui = document.getElementById(e.target.dataset.id).offsetTop
+                //    console.log(dui)
+                    document.documentElement.scrollTop = dui
+                    
+                }else{
+                    document.documentElement.scrollTop = 0
+                    const old = document.querySelector('.elevator .active')
+                    if(old)old.classList.remove('active')
+                }
+            })
+            window.addEventListener('scroll', function () {
+                const old = document.querySelector('.elevator .active')
+                if(old)old.classList.remove('active')
+                const juli = document.documentElement.scrollTop
+                const m1 = document.querySelector('#module1')
+                const m2 = document.querySelector('#module2')
+                const m3 = document.querySelector('#module3')
+                const m4 = document.querySelector('#module4')
+                if(juli >= m1.offsetTop && juli < m2.offsetTop){
+                    document.querySelector('.elevator li[data-id="module1"]').classList.add('active')
+                }
+                if(juli >= m2.offsetTop && juli < m3.offsetTop){
+                    document.querySelector('.elevator li[data-id="module2"]').classList.add('active')
+                }
+                if(juli >= m3.offsetTop && juli < m4.offsetTop){
+                    document.querySelector('.elevator li[data-id="module3"]').classList.add('active')
+                }
+                if(juli >= m4.offsetTop){
+                    document.querySelector('.elevator li[data-id="module4"]').classList.add('active')
+                }
+
+
+            })
+        }
+        
+        )();
+
+    </script>
+</body>
+
+</html>
